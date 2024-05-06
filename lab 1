@@ -1,0 +1,63 @@
+public class DataTypeExample {
+    public static void main(String[] args) {
+        // Declaring and initializing variables of different data types
+        int intValue = 10;
+        double doubleValue = 20.5;
+        char charValue = 'A';
+        boolean booleanValue = true;
+        String stringValue = "Hello, Java!";
+        
+        // Printing out the values of the variables
+        System.out.println("int value: " + intValue);
+        System.out.println("double value: " + doubleValue);
+        System.out.println("char value: " + charValue);
+        System.out.println("boolean value: " + booleanValue);
+        System.out.println("String value: " + stringValue);
+}
+}
+output:
+int value: 10
+double value: 20.5
+char value: A
+boolean value: true
+String value: Hello, Java!
+
+public class TypeCastingExample {
+    public static void main(String[] args) {
+        // Implicit type casting (widening conversion)
+        int intValue = 10;
+        double doubleValue = intValue; // Implicit casting from int to double
+        System.out.println("Implicit casting: int to double - " + doubleValue);
+        
+        // Explicit type casting (narrowing conversion)
+        double anotherDoubleValue = 20.5;
+        int anotherIntValue = (int) anotherDoubleValue; // Explicit casting from double to int
+        System.out.println("Explicit casting: double to int - " + anotherIntValue);
+    }
+}
+output:
+Implicit casting: int to double - 10.0
+Explicit casting: double to int - 20
+
+import java.util.Scanner;
+
+public class ASCIIValue {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+      
+        System.out.print("Enter a character: ");
+        char ch = scanner.next().charAt(0);
+        
+     
+        int asciiValue = (int) ch;
+        
+       
+        System.out.println("The ASCII value of '" + ch + "' is: " + asciiValue);
+        
+        scanner.close();
+}
+}
+ouput:
+Enter a character: a
+The ASCII value of 'a' is: 97
