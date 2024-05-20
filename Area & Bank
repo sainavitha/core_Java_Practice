@@ -1,0 +1,132 @@
+import java.util.Scanner;
+public class AreaCalculator
+{
+public static void main(String args[])
+{
+Scanner scan=new Scanner(System.in);
+int exit;
+System.out.println("choose the type of the object to find area");
+System.out.println("\t1. area of rectangle");
+System.out.println("\t2. area of circle");
+System.out.println("\t3. area of box");
+System.out.println("\t4. exit");
+int option=scan.nextInt();
+if(option==1)
+{
+System.out.println("enter the dimensions of the rectangle");
+int width=scan.nextInt();
+int length=scan.nextInt();
+double area =scan.nextDouble();
+
+System.out.println("area of  rectangle is "+area);
+}
+else if(option==2)
+{
+System.out.println("enter the dimensions of the circle");
+double PI=3.142;
+int radius=scan.nextInt();
+double area =PI+radius+radius;
+System.out.println("area of  circle is "+area);
+}
+else if(option==3)
+{
+System.out.println("enter the dimensions of the box");
+int width=scan.nextInt();
+int length=scan.nextInt();
+int height=scan.nextInt();
+double area =scan.nextDouble();
+
+System.out.println("area of  box is "+area);
+}
+else
+{
+System.out.print("exit");
+
+}
+}
+}
+
+------Bank Ac------
+// Define the BankAccount class
+public class BankAccount {
+    private String accountType;
+    private double balance;
+
+    // Constructor for account type only
+    public BankAccount(String accountType) {
+        this.accountType = accountType;
+        this.balance = 0.0;
+    }
+
+    // Constructor for account type and initial balance
+    public BankAccount(String accountType, double initialBalance) {
+        this.accountType = accountType;
+        this.balance = initialBalance;
+    }
+
+    // Method to deposit money (by default, assuming cash)
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited " + amount + " by cash. New balance is: " + balance);
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+    // Overloaded deposit method to accept deposits by check
+    public void deposit(double amount, String depositType) {
+        if (amount > 0 && (depositType.equalsIgnoreCase("cash") || depositType.equalsIgnoreCase("check"))) {
+            balance += amount;
+            System.out.println("Deposited " + amount + " by " + depositType + ". New balance is: " + balance);
+        } else {
+            System.out.println("Invalid deposit type or amount.");
+        }
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrew " + amount + ". New balance is: " + balance);
+        } else {
+            System.out.println("Invalid withdrawal amount.");
+        }
+    }
+
+    // Method to check the balance
+    public double getBalance() {
+        return balance;
+    }
+
+    // Method to get the account type
+    public String getAccountType() {
+        return accountType;
+    }
+
+    // Main method to test the BankAccount class
+    public static void main(String[] args) {
+        // Create a savings account with initial balance
+        BankAccount savings = new BankAccount("Savings", 500.0);
+        System.out.println("Created a " + savings.getAccountType() + " account with balance: " + savings.getBalance());
+
+        // Deposit by cash
+        savings.deposit(200.0);
+        System.out.println("Current balance: " + savings.getBalance());
+
+        // Deposit by check
+        savings.deposit(300.0, "check");
+        System.out.println("Current balance: " + savings.getBalance());
+
+        // Withdraw money
+        savings.withdraw(100.0);
+        System.out.println("Current balance: " + savings.getBalance());
+
+        // Attempt to withdraw an invalid amount
+        savings.withdraw(1000.0);
+
+        // Check balance
+        System.out.println("Final balance: " + savings.getBalance());
+}
+  }
+
