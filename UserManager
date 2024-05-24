@@ -1,0 +1,49 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class UserManager {
+
+    // Sample user data stored in maps for demonstration purposes
+    private Map<String, String> usernamePasswordMap = new HashMap<>();
+    private Map<String, String> emailPasswordMap = new HashMap<>();
+    private Map<String, String> phonePinMap = new HashMap<>();
+
+    // Constructor to initialize some user data
+    public UserManager() {
+        // Add some sample data
+        usernamePasswordMap.put("user1", "password123");
+        emailPasswordMap.put("user1@example.com", "password123");
+        phonePinMap.put("1234567890", "1234");
+    }
+
+    // Method to authenticate using username and password
+    public boolean authenticate(String username, String password) {
+        return usernamePasswordMap.containsKey(username) && usernamePasswordMap.get(username).equals(password);
+    }
+
+    // Method to authenticate using email and password
+    public boolean authenticateByEmail(String email, String password) {
+        return emailPasswordMap.containsKey(email) && emailPasswordMap.get(email).equals(password);
+    }
+
+    // Method to authenticate using phone number and PIN
+    public boolean authenticateByPhone(String phoneNumber, String pin) {
+        return phonePinMap.containsKey(phoneNumber) && phonePinMap.get(phoneNumber).equals(pin);
+    }
+
+    public static void main(String[] args) {
+        UserManager userManager = new UserManager();
+
+        // Test authentication with username and password
+        System.out.println("Username and Password Authentication: " + userManager.authenticate("user1", "password123")); // Should print true
+        System.out.println("Username and Password Authentication: " + userManager.authenticate("user1", "wrongpassword")); // Should print false
+
+        // Test authentication with email and password
+        System.out.println("Email and Password Authentication: " + userManager.authenticateByEmail("user1@example.com", "password123")); // Should print true
+        System.out.println("Email and Password Authentication: " + userManager.authenticateByEmail("user1@example.com", "wrongpassword")); // Should print false
+
+        // Test authentication with phone number and PIN
+        System.out.println("Phone Number and PIN Authentication: " + userManager.authenticateByPhone("1234567890", "1234")); // Should print true
+        System.out.println("Phone Number and PIN Authentication: " + userManager.authenticateByPhone("1234567890", "wrongpin")); // Should print false
+    }
+}
