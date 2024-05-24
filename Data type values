@@ -1,0 +1,48 @@
+public class DataTypeDemo {
+    public static void main(String[] args) {
+        // Integer types
+        byte maxByteValue = 127; // maximum value for byte
+        short maxShortValue = 32767; // maximum value for short
+        int maxIntValue = 2147483647; // maximum value for int
+        long maxLongValue = 9223372036854775807L; // maximum value for long
+
+        // Floating-point types
+        float piValue = 3.14f;
+        double precisePiValue = 3.141592653589793;
+
+        // Character type
+        char initial = 'A';
+
+        // Boolean type
+        boolean isJavaFun = true;
+
+        // Printing the values
+        System.out.println("Byte value: " + maxByteValue);
+        System.out.println("Short value: " + maxShortValue);
+        System.out.println("Integer value: " + maxIntValue);
+        System.out.println("Long value: " + maxLongValue);
+        System.out.println("Float value: " + piValue);
+        System.out.println("Double value: " + precisePiValue);
+        System.out.println("Character value: " + initial);
+        System.out.println("Boolean value: " + isJavaFun);
+    }
+}
+--------------------------------------
+public class TypeCastingDemo {
+    public static void main(String[] args) {
+        // Implicit Type Casting (Widening)
+        int intValue = 100;
+        double doubleValue = intValue; // Implicit casting from int to double
+        System.out.println("Implicit Type Casting:");
+        System.out.println("int value: " + intValue);
+        System.out.println("Converted to double: " + doubleValue);
+
+        // Explicit Type Casting (Narrowing)
+        double originalDouble = 99.99;
+        int intValueAgain = (int) originalDouble; // Explicit casting from double to int
+        System.out.println("\nExplicit Type Casting:");
+        System.out.println("Original double value: " + originalDouble);
+        System.out.println("Converted to int: " + intValueAgain);
+    }
+}
+
