@@ -1,0 +1,63 @@
+public class SumPositiveOddNumbers {
+    public static void main(String[] args) {
+        int n = 10;  // You can change this value as needed
+        int[] array = {1, -2, 3, 4, 5, 6, -7, 8, 9, 10};  // Example array, should have n elements
+
+        int sum = sumPositiveOddNumbers(array);
+        System.out.println("The sum of positive odd numbers in the array is: " + sum);
+    }
+
+    public static int sumPositiveOddNumbers(int[] arr) {
+        int sum = 0;
+        for (int num : arr) {
+            if (num > 0 && num % 2 != 0) {
+                sum += num;
+            }
+        }
+        return sum;
+    }
+}
+
+------------------------------
+
+import java.util.Scanner;
+
+public class MatrixTranspose {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Define matrix dimensions
+        int rows = 3;
+        int cols = 4;
+
+        // Initialize the matrix
+        int[][] matrix = new int[rows][cols];
+
+        // Get matrix data from user
+        System.out.println("Enter the elements of the matrix (3x4):");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Compute the transpose of the matrix
+        int[][] transpose = new int[cols][rows];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                transpose[j][i] = matrix[i][j];
+            }
+        }
+
+        // Print the transposed matrix
+        System.out.println("The transpose of the matrix is:");
+        for (int i = 0; i < cols; i++) {
+            for (int j = 0; j < rows; j++) {
+                System.out.print(transpose[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
