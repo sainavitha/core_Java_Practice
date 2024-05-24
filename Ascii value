@@ -1,0 +1,11 @@
+public class ASCIIValue {
+    public static void main(String[] args) {
+        char ch = 'A'; // Character for which ASCII value needs to be printed
+        
+        // Casting char to int to get ASCII value
+        int asciiValue = (int) ch;
+        
+        // Printing the ASCII value
+        System.out.println("ASCII value of '" + ch + "' is: " + asciiValue);
+    }
+}
