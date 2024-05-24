@@ -1,0 +1,88 @@
+public class FirstOccurrence {
+    public static void main(String[] args) {
+        // Define the string to be searched
+        String str = "Banana";
+        
+        // Define the character to find
+        char ch = 'a';
+        
+        // Find the index of the first occurrence of the character
+        int index = str.indexOf(ch);
+        
+        // Print the result
+        if (index != -1) {
+            System.out.println("The first occurrence of the character '" + ch + "' in the string \"" + str + "\" is at index: " + index);
+        } else {
+            System.out.println("The character '" + ch + "' is not found in the string \"" + str + "\".");
+        }
+    }
+}
+-------------------------
+public class ConvertToUppercase {
+    public static void main(String[] args) {
+        // Define the string to be converted
+        String str = "java";
+        
+        // Convert the string to uppercase
+        String upperStr = str.toUpperCase();
+        
+        // Print the result
+        System.out.println("Original string: " + str);
+        System.out.println("Uppercase string: " + upperStr);
+    }
+}
+--------------------------------
+public class ReplaceCharacter {
+    public static void main(String[] args) {
+        // Define the original string
+        String str = "Hello Everyone";
+        
+        // Replace all occurrences of 'e' with 'a'
+        String replacedStr = str.replace('e', 'a');
+        
+        // Print the original and the modified string
+        System.out.println("Original string: " + str);
+        System.out.println("Modified string: " + replacedStr);
+    }
+}
+---------------------------------
+import java.util.Scanner;
+
+public class CustomStringConcatenation {
+    public static void main(String[] args) {
+        // Create a Scanner object for taking input from the user
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt the user for the first string
+        System.out.print("Enter the first string: ");
+        String str1 = scanner.nextLine();
+        
+        // Prompt the user for the second string
+        System.out.print("Enter the second string: ");
+        String str2 = scanner.nextLine();
+        
+        // Concatenate the strings using a custom method
+        String concatenatedResult = concatenateStrings(str1, str2);
+        
+        // Print the concatenated result
+        System.out.println("Concatenated string: " + concatenatedResult);
+        
+        // Close the scanner
+        scanner.close();
+    }
+    
+    // Custom method to concatenate two strings
+    public static String concatenateStrings(String str1, String str2) {
+        // Create a StringBuilder to efficiently concatenate strings
+        StringBuilder stringBuilder = new StringBuilder();
+        
+        // Append the first string
+        stringBuilder.append(str1);
+        
+        // Append the second string
+        stringBuilder.append(str2);
+        
+        // Convert the StringBuilder to a String and return it
+        return stringBuilder.toString();
+    }
+}
