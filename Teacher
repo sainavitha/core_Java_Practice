@@ -1,0 +1,25 @@
+interface person
+{
+void speak();
+}
+class Student implements person
+{
+public void speak()
+{
+System.out.println("Hi, I'm Navitha");
+}
+}
+class Teacher implements person
+{
+public void speak()
+{
+System.out.println("HEllo, I'm srujana");
+}
+public static void main(String args[])
+{
+Student student=new Student();
+Teacher teacher=new Teacher();
+student.speak();
+teacher.speak();
+}
+}
