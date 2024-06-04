@@ -1,0 +1,65 @@
+
+abstract class Shape
+  {
+    // Abstract method for calculation
+    abstract double calculation();
+  }
+
+// Define the Rectangle subclass
+class Rectangle extends Shape
+    {
+    private double width;
+    private double height;
+
+    // Constructor
+    public Rectangle(double width, double height)
+     {
+        this.width = width;
+        this.height = height;
+    }
+
+    // Implement the calculation method
+    @Override
+    double calculation()
+    {
+        return width * height;
+    }
+   }
+
+// Define the Circle subclass
+class Circle extends Shape 
+   {
+    private double radius;
+
+    // Constructor
+    public Circle(double radius)
+    {
+        this.radius = radius;
+    }
+
+    // Implement the calculation method
+    @Override
+    double calculation()
+    {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Main class to run the program
+ public class Main 
+   {
+    public static void main(String[] args)
+      {
+        // Create instances of Rectangle and Circle
+        Shape rectangle = new Rectangle(6, 11);
+        Shape circle = new Circle(8);
+
+        // Calculate the area of the rectangle and the circle
+        double rectangleArea = rectangle.calculation();
+        double circleArea = circle.calculation();
+
+        // Print the areas
+        System.out.println("Area of the rectangle: " + rectangleArea);
+        System.out.println("Area of the circle: " + circleArea);
+}
+ }
