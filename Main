@@ -1,0 +1,85 @@
+class HillStations {
+    // Methods to be overridden
+    public void location() 
+    {
+        System.out.println("Generic Hill Station Location");
+    }
+
+    public void famousFor() 
+    {
+        System.out.println("Generic Hill Station Famous For");
+    }
+}
+
+// Subclass Manali
+class Manali extends HillStations 
+   {
+    @Override
+    public void location()
+    {
+        System.out.println("Manali is located in Himachal Pradesh.");
+    }
+
+    @Override
+    public void famousFor() 
+    {
+        System.out.println("Manali is famous for its scenic beauty and adventure sports.");
+    }
+ }
+
+// Subclass Mussoorie
+class Mussoorie extends HillStations
+  {
+    @Override
+    public void location()
+    {
+        System.out.println("Mussoorie is located in Uttarakhand.");
+    }
+
+    @Override
+    public void famousFor() 
+    {
+        System.out.println("Mussoorie is famous for its colonial heritage and panoramic views.");
+    }
+}
+
+// Subclass Gulmarg
+class Gulmarg extends HillStations 
+  {
+    @Override
+    public void location()
+    {
+        System.out.println("Gulmarg is located in Jammu and Kashmir.");
+    }
+
+    @Override
+    public void famousFor()
+   {
+        System.out.println("Gulmarg is famous for its skiing resorts and the Gulmarg Gondola.");
+    }
+ }
+
+// Main class to test the implementation
+public class Main  
+   {
+    public static void main(String[] args) 
+    {
+        // Creating instances of subclasses
+        HillStations hillStation1 = new HillStations();
+        HillStations hillStation2 = new HillStations();
+        HillStations hillStation3 = new HillStations();
+
+        // Calling the overridden methods
+        System.out.println("Calling methods for Manali:");
+        hillStation1.location();
+        hillStation1.famousFor();
+
+        System.out.println("\nCalling methods for Mussoorie:");
+        hillStation2.location();
+        hillStation2.famousFor();
+
+        System.out.println("\nCalling methods for Gulmarg:");
+        hillStation3.location();
+        hillStation3.famousFor();
+ }
+}
