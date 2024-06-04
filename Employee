@@ -1,0 +1,22 @@
+public class Employee 
+   {
+    static int eid;
+    static String ename;
+    static String companyName;
+    public static void displayEmployeeDetails() 
+      {
+        System.out.println("Employee ID: " + eid);
+        System.out.println("Employee Name: " + ename);
+        System.out.println("Company Name: " + companyName);
+    }
+
+    public static void main(String[] args) 
+      {
+        eid = 101;
+        ename = "John Doe";
+        companyName = "Tech Solutions";
+
+        // Displaying employee details
+        displayEmployeeDetails();
+}
+    }
