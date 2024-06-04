@@ -1,0 +1,100 @@
+interface Bankinterface
+{
+	void deposite(double amt);
+	void withdraw(double amt);
+	void getBalance();
+}
+
+class CurrentAc implements Bankinterface
+{
+    static double balance = 0;
+    CurrentAc(double balance)
+      {
+	     this.balance=balance;
+	    
+      }
+ 
+     public void deposite(double amt)
+      {
+	     if(amt>0) {
+	     balance = balance + amt;
+         System.out.println("Amount deposite "+amt);
+         System.out.println("After deposite your Amount "+balance);
+         }
+	     else {
+		 System.out.println("Amount must greater than 0");
+     	 }
+      }
+  
+     public void withdraw(double amt)
+      {
+	     if(amt>0 && amt<balance) {
+	     balance=balance-amt;
+	     System.out.println("you wanted to withdraw "+amt);
+	     System.out.println("After withdraw your Amount is " +balance);
+	     }
+	     else if(amt>balance) {
+	     System.out.println("insuffient Balance");
+	     }
+	     else {
+	     System.out.println("Amount Must be Morethan 100");
+	     }
+       }
+     public void getBalance() {
+	  System.out.println(" After checking your balance "+balance);
+      }
+  }
+  
+class SavingAc implements Bankinterface
+{
+	static double balance =0;
+	    SavingAc(double balance)
+	    {
+		  this.balance=balance;
+	    	//System.out.println(Saving_Ac.balance);
+	    }
+    public void deposite(double amt)
+	   {
+		   if(amt>0) {
+		   balance = balance + amt;
+	       System.out.println("Amount deposite "+amt);
+	       System.out.println("After deposite your Amount "+balance);
+	       }
+		   else {
+		   System.out.println("Amount must greater than 0");
+		   }
+	   }
+	 public void withdraw(double amt)
+		{
+    	   if(amt>0 && amt<balance) {
+           balance=balance-amt;
+           System.out.println("you wanted to withdraw "+amt);
+           System.out.println("After withdraw your Amount is " +balance);
+           }
+           else if(amt>balance) {
+           System.out.println("insuffient Balance");
+           }
+           else {
+           System.out.println("Amount Must be Morethan 100");
+           }
+		 }
+	 public void getBalance()
+	     {
+		  System.out.println(" After checking your balance "+balance);
+	      }
+	public static void main(String args[])
+	{
+		System.out.println("SavingAC ");
+		SavingAc sa = new SavingAc(1500);
+		System.out.println("Initial balance in saving Account " +SavingAc.balance);
+		sa.deposite(490);
+		sa.withdraw(150);
+		sa.getBalance();
+		System.out.println("CurrentAC ");
+		CurrentAc ca = new CurrentAc(800);
+		System.out.println("initial balance in Current Account "+CurrentAc.balance);
+		ca.deposite(500);
+		ca.withdraw(400);
+		ca.getBalance();
+	}
+}
