@@ -1,0 +1,13 @@
+package practice;
+
+public class Private 
+{
+private int number = 20;
+private String name ="navi";
+public static void main(String[] args)
+{
+	Private p = new Private();
+	System.out.println("number is "+p.number);
+	System.out.println("name is "+p.name);
+}
+}
