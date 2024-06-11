@@ -1,0 +1,90 @@
+package bank;
+
+public class B1 {
+	public String bankName;
+	protected double balance=0;
+	private String password;
+	 
+	  public B1(String bankName , double balance, String password) {
+		  this.bankName= bankName;
+		  this.balance= balance;
+		  this.password= password;
+	  }
+	  
+	  public String bankName()
+	  {
+		  return bankName;
+	  }
+	  public double balance() {
+		  return balance;
+	  }
+	  
+	   boolean checkpassword(String newpassword)
+	   {
+	    return this.password.equals(newpassword);
+	   }
+	  
+	  public void deposite(int amt, String password)
+		{
+			
+			if(amt >0 &&  checkpassword(password))
+			{
+			 balance = balance +amt;
+			 System.out.println("Your balance after deposite is "+balance);
+			}
+			else
+			{
+				System.out.println("invalid entry..! try again..!!");
+			}
+			
+		}
+
+        public void withdraw(int amt, String password) {
+        	if(amt< balance && checkpassword(password))
+        	{
+        	 balance = balance-amt;
+        	 System.out.println("after withdraw amount is "+balance);
+        	}
+        	else if(amt> balance && checkpassword(password))
+        	{
+        		System.out.println("insuffient balance ");
+        	}
+        	else {
+        		System.out.println("Invalid entry");
+        	}
+        }
+
+ }
+
+
+package bank;
+
+import bank.B1;
+public class B2 {
+    double balance;
+	public void getbalance()
+	{
+		System.out.println("your balance is " +balance);
+	}
+}
+
+package amt;
+
+import bank.B1;
+import bank.B2;
+public class Final
+{
+	public static void main(String[] args) 
+	{
+	
+		B1 b1= new B1("SBI", 2000, "@123");
+		B2 b2= new B2();
+		b2.getbalance();
+		System.out.println("Bank name is " +b1.bankName());
+		System.out.println("initial amount is " +b1.balance());
+		b1.deposite(600, "@123");
+		b1.withdraw(400, "@23");
+		
+	}
+
+}
