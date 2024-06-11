@@ -1,0 +1,21 @@
+public class ExtractEmail {
+    public static void main(String[] args) {
+        String text = "Hey, there how are you? this is my email id great123@gmall.com in java program";
+
+        // Regular expression pattern for email
+        String emailPattern = "([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})";
+
+        // Compile the pattern
+        Pattern pattern = Pattern.compile(emailPattern);
+        
+        // Match the pattern in the given text
+        Matcher matcher = pattern.matcher(text);
+
+        // Find and print the email
+        if (matcher.find()) {
+            System.out.println("Extracted Email ID: " + matcher.group());
+        } else {
+            System.out.println("No email ID found in the text.");
+}
+ }
+}
