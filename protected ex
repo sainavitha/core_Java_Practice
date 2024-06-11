@@ -1,0 +1,29 @@
+package practice;
+import java.lang.String;
+
+ class Main
+{
+    protected int var = 15;
+    protected void m1()
+    {
+    	System.out.println("I am from Main class ");
+    }
+}
+    class Protected extends Main
+    {
+    	
+  void display()
+  {
+	  super.m1();
+	  System.out.println("I am display method from Protected class");
+  }
+	public static void main(String[] args)
+	{
+		
+Protected p = new Protected();
+p.display();
+Main m=new Main();
+System.out.println(m.var);
+	}
+
+}
