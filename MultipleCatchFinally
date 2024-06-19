@@ -1,0 +1,47 @@
+package sampleproject;
+
+
+public class MultipleCatchFinally {
+
+	public static void main(String[] args)
+	{
+		
+        try {
+            // Array Index Out of Bounds Exception
+            int[] array = new int[5];
+            System.out.println("Accessing array element at index 10: " + array[10]);
+            
+            // Arithmetic Exception
+            int a = 10;
+            int b = 0;
+            int result = a / b;
+            System.out.println("Result of division: " + result);
+           
+        }
+        //multiple catch
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception caught: Array index out of bounds.");
+            e.printStackTrace();
+        } 
+        catch (ArithmeticException e) 
+        {
+            System.out.println("Exception caught: Arithmetic exception (division by zero).");
+            e.printStackTrace();
+        } 
+        catch (Exception e) 
+        {
+            System.out.println("Exception caught: " + e.getMessage());
+            e.printStackTrace();
+        } 
+       
+        //finally block
+         finally
+        
+        {
+            System.out.println("Finally block executed.");
+        }
+
+        System.out.println("Program continues after exception handling.");
+}
+
+	}
